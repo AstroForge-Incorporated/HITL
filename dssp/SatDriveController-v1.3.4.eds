@@ -1,0 +1,6278 @@
+[FileInfo]
+FileName=SatDriveController.eds
+FileVersion=1
+FileRevision=1
+EDSVersion=4.0
+Description=SatDrive Controller Node EDS
+CreationTime=1:27AM
+CreationDate=06-29-2021
+CreatedBy=
+ModificationTime=2:48AM
+ModificationDate=04-17-2023
+ModifiedBy=
+
+[DeviceInfo]
+VendorName=Dawn Aerospace
+VendorNumber=0
+ProductName=SatDriveController
+ProductNumber=0
+RevisionNumber=0
+BaudRate_10=1
+BaudRate_20=1
+BaudRate_50=1
+BaudRate_125=1
+BaudRate_250=1
+BaudRate_500=1
+BaudRate_800=1
+BaudRate_1000=1
+SimpleBootUpMaster=0
+SimpleBootUpSlave=0
+Granularity=8
+DynamicChannelsSupported=0
+CompactPDO=0
+GroupMessaging=0
+NrOfRXPDO=0
+NrOfTXPDO=0
+LSS_Supported=0
+
+[DummyUsage]
+Dummy0001=0
+Dummy0002=1
+Dummy0003=1
+Dummy0004=1
+Dummy0005=1
+Dummy0006=1
+Dummy0007=1
+
+[Comments]
+Lines=0
+
+[MandatoryObjects]
+SupportedObjects=2
+1=0x1000
+2=0x1018
+
+[1000]
+ParameterName=Device type
+ObjectType=0x7
+;StorageLocation=ROM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1018]
+ParameterName=Identity
+ObjectType=0x9
+;StorageLocation=ROM
+SubNumber=0x5
+
+[1018sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x04
+PDOMapping=0
+
+[1018sub1]
+ParameterName=Vendor-ID
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1018sub2]
+ParameterName=Product code
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1018sub3]
+ParameterName=Revision number
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1018sub4]
+ParameterName=Serial number
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+PDOMapping=0
+
+[OptionalObjects]
+SupportedObjects=8
+1=0x1008
+2=0x1009
+3=0x100A
+4=0x1010
+5=0x1011
+6=0x1012
+7=0x1016
+8=0x1017
+
+[1008]
+ParameterName=Manufacturer device name
+ObjectType=0x7
+;StorageLocation=ROM
+DataType=0x0009
+AccessType=ro
+DefaultValue=
+PDOMapping=0
+
+[1009]
+ParameterName=Manufacturer hardware version
+ObjectType=0x7
+;StorageLocation=ROM
+DataType=0x0009
+AccessType=ro
+DefaultValue=
+PDOMapping=0
+
+[100A]
+ParameterName=Manufacturer software version
+ObjectType=0x7
+;StorageLocation=ROM
+DataType=0x0009
+AccessType=ro
+DefaultValue=
+PDOMapping=0
+
+[1010]
+ParameterName=Save persistent data
+ObjectType=0x8
+;StorageLocation=RAM
+SubNumber=0x5
+
+[1010sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x04
+PDOMapping=0
+
+[1010sub1]
+ParameterName=Save all parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0
+PDOMapping=0
+
+[1010sub2]
+ParameterName=Save communcations parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0
+PDOMapping=0
+
+[1010sub3]
+ParameterName=Save application parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0
+PDOMapping=0
+
+[1010sub4]
+ParameterName=Save manufacturer defined default parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0
+PDOMapping=0
+
+[1011]
+ParameterName=Restore default parameters
+ObjectType=0x8
+;StorageLocation=RAM
+SubNumber=0x5
+
+[1011sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x04
+PDOMapping=0
+
+[1011sub1]
+ParameterName=Restore all default parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0x00000001
+PDOMapping=0
+
+[1011sub2]
+ParameterName=Restore communication default parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0x00000001
+PDOMapping=0
+
+[1011sub3]
+ParameterName=Restore application default parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0x00000001
+PDOMapping=0
+
+[1011sub4]
+ParameterName=Restore manufacturer defined default parameters
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=wo
+DefaultValue=0x00000001
+PDOMapping=0
+
+[1012]
+ParameterName=COB-ID time stamp object
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000100
+PDOMapping=0
+
+[1016]
+ParameterName=Consumer heartbeat time
+ObjectType=0x8
+;StorageLocation=RAM
+SubNumber=0x9
+
+[1016sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x08
+PDOMapping=0
+
+[1016sub1]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1016sub2]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1016sub3]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1016sub4]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1016sub5]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1016sub6]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1016sub7]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1016sub8]
+ParameterName=Consumer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x00000000
+PDOMapping=0
+
+[1017]
+ParameterName=Producer heartbeat time
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[ManufacturerObjects]
+SupportedObjects=57
+1=0x2000
+2=0x2001
+3=0x2002
+4=0x2003
+5=0x2004
+6=0x2008
+7=0x200B
+8=0x200C
+9=0x200D
+10=0x200E
+11=0x2018
+12=0x2019
+13=0x201A
+14=0x2030
+15=0x2031
+16=0x2032
+17=0x2033
+18=0x2100
+19=0x2400
+20=0x2401
+21=0x2402
+22=0x2403
+23=0x2404
+24=0x2405
+25=0x2412
+26=0x2413
+27=0x2416
+28=0x2417
+29=0x2418
+30=0x2419
+31=0x2500
+32=0x2600
+33=0x2601
+34=0x2602
+35=0x2603
+36=0x2604
+37=0x2605
+38=0x2612
+39=0x2613
+40=0x2614
+41=0x2615
+42=0x2616
+43=0x2617
+44=0x2618
+45=0x2619
+46=0x261A
+47=0x261B
+48=0x261C
+49=0x261D
+50=0x261E
+51=0x261F
+52=0x2620
+53=0x2621
+54=0x2622
+55=0x2623
+56=0x2624
+57=0x2625
+
+[2000]
+ParameterName=Bus Management
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x8
+
+[2000sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2000sub1]
+ParameterName=Bdefault
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2000sub2]
+ParameterName=Ttoggle
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2000sub3]
+ParameterName=Ntoggle
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2000sub4]
+ParameterName=Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2000sub5]
+ParameterName=Active bus
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2000sub6]
+ParameterName=Primary physical bus
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2000sub7]
+ParameterName=Secondary physical bus
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2001]
+ParameterName=SCET
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2002]
+ParameterName=UTC
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2003]
+ParameterName=CPU
+ObjectType=0x8
+;StorageLocation=RAM
+SubNumber=0x9
+
+[2003sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x08
+PDOMapping=0
+
+[2003sub1]
+ParameterName=Single Error Corrections
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2003sub2]
+ParameterName=Double Error Detections
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2003sub3]
+ParameterName=Bus fault count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2003sub4]
+ParameterName=Hard fault status
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2003sub5]
+ParameterName=System handler status
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2003sub6]
+ParameterName=Config fault status
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2003sub7]
+ParameterName=Bus fault address
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2003sub8]
+ParameterName=Hard fault count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2004]
+ParameterName=Power Supplies
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x3
+
+[2004sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x02
+PDOMapping=0
+
+[2004sub1]
+ParameterName=Supplies switches control
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2004sub2]
+ParameterName=Supplies status
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2008]
+ParameterName=Bridge
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x4
+
+[2008sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+
+[2008sub1]
+ParameterName=Bridge Enabled
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2008sub2]
+ParameterName=Active can bus
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2008sub3]
+ParameterName=Bridge CAN bus baudrate
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=1000000
+PDOMapping=0
+
+[200B]
+ParameterName=Anomaly handler
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x6D
+
+[200Bsub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x6C
+PDOMapping=0
+
+[200Bsub1]
+ParameterName=No valid message within heartbeat period (internal communication)
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub2]
+ParameterName=No valid message within heartbeat period (ex communication)
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub3]
+ParameterName=Invalid command received
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub4]
+ParameterName=Reserved
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Bsub5]
+ParameterName=Peripheral node in invalid / unexpected state
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Bsub6]
+ParameterName=Reserved
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Bsub7]
+ParameterName=Reserved
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Bsub8]
+ParameterName=Reserved
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Bsub9]
+ParameterName=Reserved
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200BsubA]
+ParameterName=Reserved
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200BsubB]
+ParameterName=Digital power supply current under minimum warning threashold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200BsubC]
+ParameterName=Digital power supply current under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200BsubD]
+ParameterName=Digital power supply current over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200BsubE]
+ParameterName=Digital power supply current over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200BsubF]
+ParameterName=Digital power supply voltage under minimum warning threashold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub10]
+ParameterName=Digital power supply voltage under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub11]
+ParameterName=Digital power supply voltage over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub12]
+ParameterName=Digital power supply voltage over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub13]
+ParameterName=High voltage power supply current under minimum warning threashold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub14]
+ParameterName=High voltage power supply current under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub15]
+ParameterName=High voltage power supply current over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub16]
+ParameterName=High voltage power supply current over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub17]
+ParameterName=High voltage power supply voltage under minimum warning threashold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub18]
+ParameterName=High voltage power supply voltage under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub19]
+ParameterName=High voltage power supply voltage over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub1A]
+ParameterName=High voltage power supply voltage over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub1B]
+ParameterName=Actuator 1 voltage under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub1C]
+ParameterName=Actuator 1 voltage over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub1D]
+ParameterName=Actuator 2 voltage under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub1E]
+ParameterName=Actuator 2 voltage over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub1F]
+ParameterName=Actuator 3 voltage under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub20]
+ParameterName=Actuator 3 voltage over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub21]
+ParameterName=Actuator 4 voltage under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub22]
+ParameterName=Actuator 4 voltage over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub23]
+ParameterName=Heater 1 temperature under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub24]
+ParameterName=Heater 1 temperature under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub25]
+ParameterName=Heater 1 temperature over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub26]
+ParameterName=Heater 1 temperature over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub27]
+ParameterName=Heater 2 temperature under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub28]
+ParameterName=Heater 2 temperature under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub29]
+ParameterName=Heater 2 temperature over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub2A]
+ParameterName=Heater 2 temperature over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub2B]
+ParameterName=Heater 3 temperature under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub2C]
+ParameterName=Heater 3 temperature under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub2D]
+ParameterName=Heater 3 temperature over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub2E]
+ParameterName=Heater 3 temperature over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub2F]
+ParameterName=Heater 4 temperature under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub30]
+ParameterName=Heater 4 temperature under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub31]
+ParameterName=Heater 4 temperature over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub32]
+ParameterName=Heater 4 temperature over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub33]
+ParameterName=Pressure sensor 1 under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub34]
+ParameterName=Pressure sensor 1 under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub35]
+ParameterName=Pressure sensor 1 over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub36]
+ParameterName=Pressure sensor 1 over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub37]
+ParameterName=Pressure sensor 2 under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub38]
+ParameterName=Pressure sensor 2 under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub39]
+ParameterName=Pressure sensor 2 over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub3A]
+ParameterName=Pressure sensor 2 over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub3B]
+ParameterName=Igniter current under minimum warning threashold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub3C]
+ParameterName=Igniter current under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub3D]
+ParameterName=Igniter current over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub3E]
+ParameterName=Igniter current over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub3F]
+ParameterName=Igniter voltage under minimum warning threashold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub40]
+ParameterName=Igniter voltage under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub41]
+ParameterName=Igniter voltage over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub42]
+ParameterName=Igniter voltage over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub43]
+ParameterName=Ambient temperature under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub44]
+ParameterName=Ambient temperature over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub45]
+ParameterName=Thruster temperature under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub46]
+ParameterName=Thruster  temperature under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub47]
+ParameterName=Thruster temperature over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub48]
+ParameterName=Thruster  temperature over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub49]
+ParameterName=Thruster pressure under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub4A]
+ParameterName=Thruster  pressure under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub4B]
+ParameterName=Thruster pressure over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub4C]
+ParameterName=Thruster pressure over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub4D]
+ParameterName=Ox/Fuel ratio under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub4E]
+ParameterName=Ox/Fuel ratio under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub4F]
+ParameterName=Ox/Fuel ratio over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub50]
+ParameterName=Ox/Fuel ratio over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub51]
+ParameterName=Fuel tanks near empty - warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub52]
+ParameterName=Oxidizer tanks near empty - warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub53]
+ParameterName=Fuel tanks near empty - abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub54]
+ParameterName=Oxidizer tanks near empty - abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub55]
+ParameterName=Fuel tanks out of balance - warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub56]
+ParameterName=Oxidizer tanks out of balance - warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub57]
+ParameterName=Fuel tanks out of balance - abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub58]
+ParameterName=Oxidizer tanks out of balance - abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub59]
+ParameterName=Fuel tanks pressure under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub5A]
+ParameterName=Fuel tanks pressure under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub5B]
+ParameterName=Fuel tanks pressure over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub5C]
+ParameterName=Fuel tanks pressure over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub5D]
+ParameterName=Oxidizer tanks pressure under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub5E]
+ParameterName=Oxidizer tanks pressure under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub5F]
+ParameterName=Oxidizer tanks pressure over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub60]
+ParameterName=Oxidizer tanks pressure over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub61]
+ParameterName=Fuel feedline pressure under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub62]
+ParameterName=Fuel feedline pressure under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub63]
+ParameterName=Fuel feedline pressure over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub64]
+ParameterName=Fuel feedline pressure over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub65]
+ParameterName=Oxidizer feedline pressure under minimum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub66]
+ParameterName=Oxidizer feedline pressure under minimum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub67]
+ParameterName=Oxidizer feedline pressure over maximum warning threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[200Bsub68]
+ParameterName=Oxidizer feedline pressure over maximum abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub69]
+ParameterName=Fuel tanks loss of pressure over abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub6A]
+ParameterName=Oxidizer tanks loss of pressure over abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub6B]
+ParameterName=Fuel feedline loss of pressure over abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200Bsub6C]
+ParameterName=Oxidizer feedline loss of pressure over abort threshold
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[200C]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+HighLimit=15
+LowLimit=0
+DefaultValue=0
+PDOMapping=1
+
+[200D]
+ParameterName=Sensors
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0xB
+
+[200Dsub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[200Dsub1]
+ParameterName=CPU Voltage [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub2]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub3]
+ParameterName=VACT_V [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub4]
+ParameterName=VACT_I [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub5]
+ParameterName=VDIG_V [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub6]
+ParameterName=VDIG_I [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub7]
+ParameterName=VACT_SYS [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub8]
+ParameterName=VDIG_OUT [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200Dsub9]
+ParameterName=RBF [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200DsubA]
+ParameterName=TID [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[200E]
+ParameterName=Gateway
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x8
+
+[200Esub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[200Esub1]
+ParameterName=Serial Baud rate
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=115200
+PDOMapping=0
+
+[200Esub2]
+ParameterName=Good rx frame counter
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Esub3]
+ParameterName=Good tx frame counter
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Esub4]
+ParameterName=Serial rx CRC faiilures
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Esub5]
+ParameterName=Serial rx aborts
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Esub6]
+ParameterName=Serial tx retries
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[200Esub7]
+ParameterName=Serial tx failures
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2018]
+ParameterName=Logging Domain
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x9
+
+[2018sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x08
+PDOMapping=0
+
+[2018sub1]
+ParameterName=Region 1
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2018sub2]
+ParameterName=Region 2
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2018sub3]
+ParameterName=Region 3
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2018sub4]
+ParameterName=Region 4
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2018sub5]
+ParameterName=Region 5
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2018sub6]
+ParameterName=Region 6
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2018sub7]
+ParameterName=Region 7
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2018sub8]
+ParameterName=Region 8
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x000F
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2019]
+ParameterName=Logging Control
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x9
+
+[2019sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x08
+PDOMapping=0
+
+[2019sub1]
+ParameterName=Region 1
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2019sub2]
+ParameterName=Region 2
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2019sub3]
+ParameterName=Region 3
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2019sub4]
+ParameterName=Region 4
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2019sub5]
+ParameterName=Region 5
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2019sub6]
+ParameterName=Region 6
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2019sub7]
+ParameterName=Region 7
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2019sub8]
+ParameterName=Region 8
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[201A]
+ParameterName=ActiveLog
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2030]
+ParameterName=Fu Pressure
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x4
+
+[2030sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+
+[2030sub1]
+ParameterName=Node Id
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=57
+PDOMapping=0
+
+[2030sub2]
+ParameterName=Sensor Input Number
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2030sub3]
+ParameterName=Pressure
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2031]
+ParameterName=Ox Pressure
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x4
+
+[2031sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+
+[2031sub1]
+ParameterName=Node Id
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=57
+PDOMapping=0
+
+[2031sub2]
+ParameterName=Sensor Input Number
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2031sub3]
+ParameterName=Pressure
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2032]
+ParameterName=Fuel Pressure (redundant)
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x4
+
+[2032sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+
+[2032sub1]
+ParameterName=Node Id
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=48
+PDOMapping=0
+
+[2032sub2]
+ParameterName=Sensor Input Number
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2032sub3]
+ParameterName=Pressure
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2033]
+ParameterName=Ox Pressure (redundant)
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x4
+
+[2033sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x03
+PDOMapping=0
+
+[2033sub1]
+ParameterName=Node Id
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=48
+PDOMapping=0
+
+[2033sub2]
+ParameterName=Sensor Input Number
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2033sub3]
+ParameterName=Pressure
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2100]
+ParameterName=Calibration
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x1F
+
+[2100sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x1E
+PDOMapping=0
+
+[2100sub1]
+ParameterName=CPU Voltage Offset
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub2]
+ParameterName=CPU Voltage Linear
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100sub3]
+ParameterName=CPU Voltage Quadratic
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub4]
+ParameterName=CPU Temperature Offset
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100sub5]
+ParameterName=CPU Temperature Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100sub6]
+ParameterName=CPU Temperature Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub7]
+ParameterName=VACT V Offset term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub8]
+ParameterName=VACT V Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100sub9]
+ParameterName=VACT V Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100subA]
+ParameterName=VACT I Offset term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100subB]
+ParameterName=VACT I Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100subC]
+ParameterName=VACT I Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100subD]
+ParameterName=VDIG V Offset term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100subE]
+ParameterName=VDIG V Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100subF]
+ParameterName=VDIG V Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub10]
+ParameterName=VDIG I Offset term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub11]
+ParameterName=VDIG I Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100sub12]
+ParameterName=VDIG I Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub13]
+ParameterName=VACT_SYS Offset term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub14]
+ParameterName=VACT_SYS Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100sub15]
+ParameterName=VACT_SYS Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub16]
+ParameterName=VDIG_OUT Offset term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub17]
+ParameterName=VDIG_OUT Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=
+PDOMapping=0
+
+[2100sub18]
+ParameterName=VDIG_OUT Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub19]
+ParameterName=RBF Offset erm
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub1A]
+ParameterName=RBF Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2100sub1B]
+ParameterName=RBF Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub1C]
+ParameterName=TID Offset term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2100sub1D]
+ParameterName=TID Linear term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2100sub1E]
+ParameterName=TID Quadratic term
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2400]
+ParameterName=Configuration
+ObjectType=0x9
+;StorageLocation=PERSIST_COMM
+SubNumber=0xD
+
+[2400sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0D
+PDOMapping=0
+
+[2400sub1]
+ParameterName=Feedline Temperature Difference
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rw
+DefaultValue=60
+PDOMapping=0
+
+[2400sub2]
+ParameterName=Dryout Delay
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rw
+DefaultValue=60
+PDOMapping=0
+
+[2400sub3]
+ParameterName=Dryout Temperature
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rw
+DefaultValue=3082
+PDOMapping=0
+
+[2400sub5]
+ParameterName=Fire cmd bridge
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0001
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2400sub6]
+ParameterName=Fuel Pressure PID - Kp
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=4
+PDOMapping=0
+
+[2400sub7]
+ParameterName=Fuel Pressure PID - Ki
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=2
+PDOMapping=0
+
+[2400sub8]
+ParameterName=Fuel Pressure PID - Kd
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2400sub9]
+ParameterName=Fuel Pressure PID - Integral limit
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=1000
+PDOMapping=0
+
+[2400subA]
+ParameterName=Oxidizer Pressure PID - Kp
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=6
+PDOMapping=0
+
+[2400subB]
+ParameterName=Oxidizer Pressure PID - Ki
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=3
+PDOMapping=0
+
+[2400subC]
+ParameterName=Oxidizer Pressure PID - Kd
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2400subD]
+ParameterName=Oxidizer Pressure PID - Integral limit
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0008
+AccessType=rw
+DefaultValue=2000
+PDOMapping=0
+
+[2401]
+ParameterName=Thruster Node 1
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xB
+
+[2401sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2401sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2401sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2401sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2401sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2401sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2401sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2401sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2401sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2401sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2401subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2402]
+ParameterName=Thruster Node 2
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xB
+
+[2402sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2402sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2402sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2402sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2402sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2402sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2402sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2402sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2402sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2402sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2402subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2403]
+ParameterName=Thruster Node 3
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xB
+
+[2403sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2403sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2403sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2403sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2403sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2403sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2403sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2403sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2403sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2403sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2403subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2404]
+ParameterName=Thruster Node 4
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xB
+
+[2404sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2404sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2404sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2404sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2404sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2404sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2404sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2404sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2404sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2404sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2404subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2405]
+ParameterName=Thruster Node 5
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xB
+
+[2405sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2405sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2405sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2405sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2405sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2405sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2405sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2405sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2405sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2405sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2405subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2412]
+ParameterName=Feedline Node 1
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xC
+
+[2412sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0B
+PDOMapping=0
+
+[2412sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2412sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2412sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2412sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2412sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2412sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2412sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2412sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2412sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2412subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2412subB]
+ParameterName=Mixed propellants
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0001
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2413]
+ParameterName=Feedline Node 2
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xC
+
+[2413sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0B
+PDOMapping=0
+
+[2413sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2413sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2413sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2413sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2413sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2413sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2413sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2413sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2413sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2413subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2413subB]
+ParameterName=Mixed propellants
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0001
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2416]
+ParameterName=Tank Node 1
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xC
+
+[2416sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0B
+PDOMapping=0
+
+[2416sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2416sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2416sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2416sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2416sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2416sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2416sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2416sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2416sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2416subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2416subB]
+ParameterName=Mixed propellants
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0001
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2417]
+ParameterName=Tank Node 2
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xC
+
+[2417sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0B
+PDOMapping=0
+
+[2417sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2417sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2417sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2417sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2417sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2417sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2417sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2417sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2417sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2417subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2417subB]
+ParameterName=Mixed propellants
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0001
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2418]
+ParameterName=Tank Node 3
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xC
+
+[2418sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0B
+PDOMapping=0
+
+[2418sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2418sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2418sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2418sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2418sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2418sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2418sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2418sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2418sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2418subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2418subB]
+ParameterName=Mixed propellants
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0001
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2419]
+ParameterName=Tank Node 4
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0xC
+
+[2419sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0B
+PDOMapping=0
+
+[2419sub1]
+ParameterName=PDO 0 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2419sub2]
+ParameterName=PDO 1 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2419sub3]
+ParameterName=PDO 2 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2419sub4]
+ParameterName=PDO 3 timer
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=1000
+PDOMapping=1
+
+[2419sub5]
+ParameterName=Toggle Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2419sub6]
+ParameterName=Last Anomaly
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2419sub7]
+ParameterName=CPU Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2419sub8]
+ParameterName=VACT Voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2419sub9]
+ParameterName=VACT Current [mA]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2419subA]
+ParameterName=Last Data Received [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2419subB]
+ParameterName=Mixed propellants
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0001
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[2500]
+ParameterName=Control
+ObjectType=0x9
+;StorageLocation=PERSIST_APP
+SubNumber=0x8
+
+[2500sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2500sub1]
+ParameterName=State / Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2500sub2]
+ParameterName=Fire Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[2500sub3]
+ParameterName=Thermal Control Type
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+DefaultValue=2
+PDOMapping=0
+
+[2500sub4]
+ParameterName=Fuel Tank Pressure Setpoint
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=7780
+PDOMapping=0
+
+[2500sub5]
+ParameterName=Oxidizer Tank Pressure Setpoint
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=rw
+DefaultValue=40000
+PDOMapping=0
+
+[2500sub6]
+ParameterName=Fuel Tank Temperature Setpoint
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=2832
+PDOMapping=0
+
+[2500sub7]
+ParameterName=Oxidizer Tank Temperature Setpoint
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=2832
+PDOMapping=0
+
+[2600]
+ParameterName=System Monitoring
+ObjectType=0x9
+;StorageLocation=PERSIST_COMM
+SubNumber=0x5
+
+[2600sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x04
+PDOMapping=0
+
+[2600sub1]
+ParameterName=System Cycle
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2600sub2]
+ParameterName=System Runtime
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2600sub3]
+ParameterName=Heating Cycle
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2600sub4]
+ParameterName=Heating Runtime
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601]
+ParameterName=Thruster 1
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x11
+
+[2601sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x10
+PDOMapping=0
+
+[2601sub1]
+ParameterName=Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2601sub2]
+ParameterName=State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2601sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2601sub4]
+ParameterName=Pressure [mBar]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2601sub5]
+ParameterName=Burn Duration [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=100
+PDOMapping=1
+
+[2601sub6]
+ParameterName=Burn Start Time [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2601sub7]
+ParameterName=Pressure Integral [mBar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2601sub8]
+ParameterName=Hot Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601sub9]
+ParameterName=Hot Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601subA]
+ParameterName=Hot Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601subB]
+ParameterName=Cold Fuel Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601subC]
+ParameterName=Cold Fuel Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601subD]
+ParameterName=Cold Fuel Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601subE]
+ParameterName=Cold Ox Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601subF]
+ParameterName=Cold Ox Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2601sub10]
+ParameterName=Cold Ox Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602]
+ParameterName=Thruster 2
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x11
+
+[2602sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x10
+PDOMapping=0
+
+[2602sub1]
+ParameterName=Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2602sub2]
+ParameterName=State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2602sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2602sub4]
+ParameterName=Pressure [mBar]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2602sub5]
+ParameterName=Burn Duration [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=100
+PDOMapping=1
+
+[2602sub6]
+ParameterName=Burn Start Time [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2602sub7]
+ParameterName=Pressure Integral [mBar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2602sub8]
+ParameterName=Hot Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602sub9]
+ParameterName=Hot Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602subA]
+ParameterName=Hot Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602subB]
+ParameterName=Cold Fuel Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602subC]
+ParameterName=Cold Fuel Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602subD]
+ParameterName=Cold Fuel Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602subE]
+ParameterName=Cold Ox Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602subF]
+ParameterName=Cold Ox Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2602sub10]
+ParameterName=Cold Ox Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603]
+ParameterName=Thruster 3
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x11
+
+[2603sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x10
+PDOMapping=0
+
+[2603sub1]
+ParameterName=Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2603sub2]
+ParameterName=State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2603sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2603sub4]
+ParameterName=Pressure [mBar]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2603sub5]
+ParameterName=Burn Duration [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=100
+PDOMapping=1
+
+[2603sub6]
+ParameterName=Burn Start Time [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2603sub7]
+ParameterName=Pressure Integral [mBar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2603sub8]
+ParameterName=Hot Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603sub9]
+ParameterName=Hot Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603subA]
+ParameterName=Hot Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603subB]
+ParameterName=Cold Fuel Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603subC]
+ParameterName=Cold Fuel Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603subD]
+ParameterName=Cold Fuel Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603subE]
+ParameterName=Cold Ox Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603subF]
+ParameterName=Cold Ox Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2603sub10]
+ParameterName=Cold Ox Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604]
+ParameterName=Thruster 4
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x11
+
+[2604sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x10
+PDOMapping=0
+
+[2604sub1]
+ParameterName=Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2604sub2]
+ParameterName=State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2604sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2604sub4]
+ParameterName=Pressure [mBar]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2604sub5]
+ParameterName=Burn Duration [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=100
+PDOMapping=1
+
+[2604sub6]
+ParameterName=Burn Start Time [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2604sub7]
+ParameterName=Pressure Integral [mBar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2604sub8]
+ParameterName=Hot Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604sub9]
+ParameterName=Hot Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604subA]
+ParameterName=Hot Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604subB]
+ParameterName=Cold Fuel Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604subC]
+ParameterName=Cold Fuel Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604subD]
+ParameterName=Cold Fuel Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604subE]
+ParameterName=Cold Ox Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604subF]
+ParameterName=Cold Ox Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2604sub10]
+ParameterName=Cold Ox Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605]
+ParameterName=Thruster 5
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x11
+
+[2605sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x10
+PDOMapping=0
+
+[2605sub1]
+ParameterName=Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2605sub2]
+ParameterName=State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2605sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2605sub4]
+ParameterName=Pressure [mBar]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2605sub5]
+ParameterName=Burn Duration [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=100
+PDOMapping=1
+
+[2605sub6]
+ParameterName=Burn Start Time [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2605sub7]
+ParameterName=Pressure Integral [mBar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2605sub8]
+ParameterName=Hot Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605sub9]
+ParameterName=Hot Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605subA]
+ParameterName=Hot Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605subB]
+ParameterName=Cold Fuel Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605subC]
+ParameterName=Cold Fuel Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605subD]
+ParameterName=Cold Fuel Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605subE]
+ParameterName=Cold Ox Firing Count
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605subF]
+ParameterName=Cold Ox Firing Total Burntime [ms]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2605sub10]
+ParameterName=Cold Ox Firing Total Pint [mbar.s]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[2612]
+ParameterName=Fuel Feedline 1
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0xA
+
+[2612sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2612sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2612sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2612sub3]
+ParameterName=Valve Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2612sub4]
+ParameterName=Valve State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2612sub5]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2612sub7]
+ParameterName=Heater Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2892
+PDOMapping=1
+
+[2612sub8]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2612sub9]
+ParameterName=Valve heating voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2612subA]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2613]
+ParameterName=Fuel Feedline 2
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0xA
+
+[2613sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2613sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2613sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2613sub3]
+ParameterName=Valve Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2613sub4]
+ParameterName=Valve State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2613sub5]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2613sub7]
+ParameterName=Heater Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2892
+PDOMapping=1
+
+[2613sub8]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2613sub9]
+ParameterName=Valve heating voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2613subA]
+ParameterName=Default Heater Duty Cycle [%] 
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2614]
+ParameterName=Oxidizer Feedline 1
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0xA
+
+[2614sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2614sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2614sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2614sub3]
+ParameterName=Valve Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2614sub4]
+ParameterName=Valve State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2614sub5]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2614sub7]
+ParameterName=Heater Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2892
+PDOMapping=1
+
+[2614sub8]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2614sub9]
+ParameterName=Valve heating voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2614subA]
+ParameterName=Default Heater Duty Cycle [%] 
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2615]
+ParameterName=Oxidizer Feedline 2
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0xA
+
+[2615sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x0A
+PDOMapping=0
+
+[2615sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2615sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2615sub3]
+ParameterName=Valve Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2615sub4]
+ParameterName=Valve State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2615sub5]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2615sub7]
+ParameterName=Heater Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2892
+PDOMapping=1
+
+[2615sub8]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2615sub9]
+ParameterName=Valve heating voltage [mV]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2615subA]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2616]
+ParameterName=Fuel Tank 1
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2616sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2616sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2616sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2616sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2616sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2616sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2616sub7]
+ParameterName=Default Heater Duty Cycle [%] 
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2617]
+ParameterName=Fuel Tank 2
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2617sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2617sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2617sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2617sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2617sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2617sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2617sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2618]
+ParameterName=Fuel Tank 3
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2618sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2618sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2618sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2618sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2618sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2618sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2618sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2619]
+ParameterName=Fuel Tank 4
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2619sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2619sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2619sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2619sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2619sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2619sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2619sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[261A]
+ParameterName=Fuel Tank 5
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[261Asub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[261Asub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[261Asub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Asub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Asub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[261Asub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[261Asub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[261B]
+ParameterName=Fuel Tank 6
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[261Bsub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[261Bsub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[261Bsub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Bsub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Bsub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[261Bsub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[261Bsub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[261C]
+ParameterName=Fuel Tank 7
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[261Csub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[261Csub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[261Csub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Csub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Csub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[261Csub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[261Csub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[261D]
+ParameterName=Fuel Tank 8
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[261Dsub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[261Dsub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[261Dsub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Dsub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Dsub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[261Dsub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[261Dsub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[261E]
+ParameterName=Oxidizer Tank 1
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[261Esub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[261Esub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[261Esub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Esub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Esub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[261Esub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[261Esub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[261F]
+ParameterName=Oxidizer Tank 2
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[261Fsub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[261Fsub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[261Fsub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Fsub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[261Fsub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[261Fsub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[261Fsub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2620]
+ParameterName=Oxidizer Tank 3
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2620sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2620sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2620sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2620sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2620sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2620sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2620sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2621]
+ParameterName=Oxidizer Tank 4
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2621sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2621sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2621sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2621sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2621sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2621sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2621sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2622]
+ParameterName=Oxidizer Tank 5
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2622sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2622sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2622sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2622sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2622sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2622sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2622sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2623]
+ParameterName=Oxidizer Tank 6
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2623sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2623sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2623sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2623sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2623sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2623sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2623sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2624]
+ParameterName=Oxidizer Tank 7
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2624sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2624sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2624sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2624sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2624sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2624sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2624sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+
+[2625]
+ParameterName=Oxidizer Tank 8
+ObjectType=0x9
+;StorageLocation=RAM
+SubNumber=0x7
+
+[2625sub0]
+ParameterName=Highest sub-index supported
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x07
+PDOMapping=0
+
+[2625sub1]
+ParameterName=Heater Command
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=0
+PDOMapping=1
+
+[2625sub2]
+ParameterName=Heater State
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2625sub3]
+ParameterName=Temperature [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2625sub5]
+ParameterName=Temperature Setpoint [0.1K]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0006
+AccessType=rww
+DefaultValue=2832
+PDOMapping=1
+
+[2625sub6]
+ParameterName=Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rww
+DefaultValue=70
+PDOMapping=1
+
+[2625sub7]
+ParameterName=Default Heater Duty Cycle [%]
+ObjectType=0x7
+;StorageLocation=RAM
+DataType=0x0005
+AccessType=rw
+HighLimit=100
+LowLimit=0
+DefaultValue=70
+PDOMapping=0
+

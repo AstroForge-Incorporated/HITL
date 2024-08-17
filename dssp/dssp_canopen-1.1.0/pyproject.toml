@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dssp_canopen"
+version = "1.1.0"
+description = "DAWN Aerospace Simple Serial Protocol"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pyserial",
+    "canopen",
+    'importlib-metadata; python_version<"3.8"',
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+

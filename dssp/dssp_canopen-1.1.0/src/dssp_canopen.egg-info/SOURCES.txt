@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+./src/dssp_canopen/__init__.py
+./src/dssp_canopen/canopen_gateway.py
+./src/dssp_canopen/dssp_dll.py
+./src/dssp_canopen/dssp_gateway.py
+./src/dssp_canopen/gateway_transport.py
+./src/dssp_canopen.egg-info/PKG-INFO
+./src/dssp_canopen.egg-info/SOURCES.txt
+./src/dssp_canopen.egg-info/dependency_links.txt
+./src/dssp_canopen.egg-info/requires.txt
+./src/dssp_canopen.egg-info/top_level.txt

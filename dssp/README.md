@@ -1,0 +1,52 @@
+# DSSP CANopen gateway package
+
+## Installation
+
+### Virtual enviroment
+A local virtual python environment is highly recommended
+
+```
+python -m venv ./venvclear
+source ./venv/bin/activate
+```
+
+### Install module
+```
+pip install dssp_canopen-x.x.x.tar.gz
+```
+-or-
+```
+pip install dssp_canopen-x.x.x-py3-none-any.whl
+```
+
+where x.x.x is the current version
+
+If using a serial interface you will probably need to add your user to the dialout group.  See the documentation for your Linux distribution.
+
+If using a CAN interface you will need to configure and initialise it for 1Mbps.  See your CAN interface documention.
+
+## Usage
+
+gw = dssp.CanOpenGateway(node, device, baudrate )
+
+gw.sdo.upload(node, index, subindex, payload_type)
+
+gw.sdo.download(node, index, subindex, payload_type, payload)
+
+gw.nmt.start(node)
+
+gw.nmt.stop(node)
+
+gw.nmt.preop(node)
+
+gw.nmt.reset_node(node)
+
+gw.nmt.reset_comms(node)
+
+where payload_type is one of:
+
+GATEWAY_TYPE_BOOL, GATEWAY_TYPE_INT8, GATEWAY_TYPE_INT16, GATEWAY_TYPE_INT32, GATEWAY_TYPE_UINT8, GATEWAY_TYPE_UINT16, GATEWAY_TYPE_UINT32, GATEWAY_TYPE_REAL32, GATEWAY_TYPE_STRING, GATEWAY_TYPE_DOMAIN
+
+See test_loop.py for an example
+
+

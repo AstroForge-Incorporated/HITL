@@ -1,14 +1,14 @@
 import serial
 import datetime
 from time import sleep
-import requests
 import sqlite3
 import pprint
+import os
 from contextlib import closing
 
 # Configure the serial connection
 ser = serial.Serial(
-    port='COM3',
+    port='/dev/ttyACM1',
     baudrate=9600,
     bytesize=serial.EIGHTBITS,
     parity=serial.PARITY_NONE,
@@ -16,14 +16,22 @@ ser = serial.Serial(
     timeout=1  # Timeout for read
 )
 
-# establish loads
+# Establish loads
 loads = [1, 2, 3, 4]
 
-# initialize the dictionary with load keys, each with four empty lists [time, voltage, current, power]
-modules = {i : [[], [], [], []] for i in range(1, 5)} 
+# Initialize the dictionary with load keys, each with four empty lists [time, voltage, current, power]
+modules = {i: [[], [], [], []] for i in range(1, 5)}
+
+# Desired directory for the SQLite database
+db_directory = '/var/lib/grafana/db'
+os.makedirs(db_directory, exist_ok=True)  # Create the directory if it doesn't exist
+
+# Database file path
+db_path = os.path.join(db_directory, 'eload.db')
+print(f"Using database path: {db_path}")  # Debugging line to check path
 
 # Connect to the SQLite database
-with sqlite3.connect("eload.db") as connection:
+with sqlite3.connect(db_path) as connection:
     cursor = connection.cursor()
 
     # Create the table if it does not exist
@@ -36,6 +44,7 @@ with sqlite3.connect("eload.db") as connection:
             timestamps REAL
         )
     """)
+
 try:
     while True:
         sleep(5)
@@ -50,7 +59,7 @@ try:
         print(powers)
         
         # Collect data from loads 1-4
-        for load in loads: 
+        for load in loads:
             timestamp = datetime.datetime.now().timestamp()
             
             curr_vol = voltages[load-1]
@@ -61,35 +70,35 @@ try:
             modules[load][1].append(curr_vol)
             modules[load][2].append(curr_curr)
             modules[load][3].append(curr_pow)
-            
 
             # Insert data into the table
-            cursor.execute("""
-                INSERT INTO ELOADS (load, timestamps, voltage, current, power) 
-                VALUES (?, ?, ?, ?, ?)
-            """, (load, timestamp, curr_vol, curr_curr, curr_pow))
+            with sqlite3.connect(db_path) as connection:
+                cursor = connection.cursor()
+                cursor.execute("""
+                    INSERT INTO ELOADS (load, timestamps, voltage, current, power) 
+                    VALUES (?, ?, ?, ?, ?)
+                """, (load, timestamp, curr_vol, curr_curr, curr_pow))
+                connection.commit()
 
-        # Commit the changes
-        connection.commit()
         print("Data updated in ELOADS table successfully.")
 
-        # Print rtds data in a pretty format
+        # Print data in a pretty format
         print("Eloads Data:")
         for load in loads:
             print(f"\nLoad {load}:")
             pprint.pprint(list(zip(modules[load][0], modules[load][1], modules[load][2], modules[load][3])), indent=2, width=80)
-            
+
 except KeyboardInterrupt:
     # Print the number of rows inserted
     print("Number of rows inserted:", connection.total_changes)
 
     # Optional: Verify the data was inserted correctly
-    with sqlite3.connect("eload.db") as connection:
+    with sqlite3.connect(db_path) as connection:
         with closing(connection.cursor()) as cursor:
             rows = cursor.execute("SELECT * FROM ELOADS").fetchall()
             print("Data in ELOADS table:")
             for row in rows:
                 print(row)
 
-
     ser.close()
+

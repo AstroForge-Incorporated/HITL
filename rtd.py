@@ -1,7 +1,6 @@
 from __future__ import print_function
 import pilxi
 import datetime
-import requests
 import sqlite3
 import pprint
 from contextlib import closing
@@ -13,7 +12,7 @@ if __name__ == "__main__":
     # 'PXI' in place of the IP.
     print("pilxi wrapper version: {}".format(pilxi.__version__))
 
-    IP_Address = "169.254.215.49"
+    IP_Address = "192.168.80.25"
 
      # Default port and timeout settings in mS
     port = 1024
@@ -49,7 +48,8 @@ if __name__ == "__main__":
     rtds = {i : [[], []] for i in range(1, 7)} 
 
     # Connect to the SQLite database
-    with sqlite3.connect("rtd.db") as connection:
+    db_path = "/var/lib/grafana/db/rtd.db"
+    with sqlite3.connect(db_path) as connection:
         cursor = connection.cursor()
 
         # Create the table if it does not exist
@@ -75,13 +75,14 @@ if __name__ == "__main__":
             rtds[subunit][1].append(str(curr_ohm))
 
             # Insert data into the table
-            cursor.execute("""
-                INSERT INTO RTDs (subunit, resistance, timestamps) 
-                VALUES (?, ?, ?)
-            """, (subunit, curr_ohm, timestamp))
+            with sqlite3.connect(db_path) as connection:
+                cursor = connection.cursor()
+                cursor.execute("""
+                    INSERT INTO RTDs (subunit, resistance, timestamps) 
+                    VALUES (?, ?, ?)
+                """, (subunit, curr_ohm, timestamp))
+                connection.commit()
 
-        # Commit the changes
-        connection.commit()
         print("Data updated in RTDs table successfully.")
 
         # Print rtds data in a pretty format
@@ -89,11 +90,6 @@ if __name__ == "__main__":
         for subunit in subunits:
             print(f"\nSubunit {subunit}:")
             pprint.pprint(list(zip(rtds[subunit][0], rtds[subunit][1])), indent=2, width=80)
-
-        # Define the local URL and payload and send data to host
-        url = 'http://localhost:5000/test'
-        myobj = rtds
-        response = requests.post(url, json = myobj)
 
         # Specify desired subunit to modify or quit to terminate program
         subunit = input("Channel Number (1-6): ")
@@ -126,18 +122,11 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"An error occurred: {e}")
 
-    # Final Data send after program terminates
-    url = 'http://localhost:5000/test'
-    myobj = rtds
-    response = requests.post(url, json = myobj)
-
     # Print the number of rows inserted
-    print("Number of rows inserted:", connection.total_changes)
-
-    # Optional: Verify the data was inserted correctly
-    with sqlite3.connect("rtd.db") as connection:
+    with sqlite3.connect(db_path) as connection:
         with closing(connection.cursor()) as cursor:
             rows = cursor.execute("SELECT * FROM RTDs").fetchall()
             print("Data in RTDs table:")
             for row in rows:
                 print(row)
+

@@ -1,9 +1,9 @@
 import pilxi
 import datetime
-import requests
 import sqlite3
 import pprint
 from contextlib import closing
+
 if __name__ == "__main__":
 
     # Connect to a chassis using an IP address.
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # 'PXI' in place of the IP.
     print("pilxi wrapper version: {}".format(pilxi.__version__))
 
-    IP_Address = "169.254.215.49"
+    IP_Address = "192.168.80.25"
 
     # Default port and timeout settings in mS
     port = 1024
@@ -44,12 +44,12 @@ if __name__ == "__main__":
     print("Successfully connected to card at bus", bus, "device", device)
     print("Card ID: ", cardId)
 
-
     # initialize the dictionary with subunit keys 1-16, each with two empty lists [timestamps, voltage]
     thermocouples = {i : [[], []] for i in range(1, 17)} 
 
     # Connect to the SQLite database
-    with sqlite3.connect("thermocouple.db") as connection:
+    db_path = "/var/lib/grafana/db/thermocouple.db"
+    with sqlite3.connect(db_path) as connection:
         cursor = connection.cursor()
 
         # Create the table if it does not exist
@@ -65,7 +65,6 @@ if __name__ == "__main__":
         card.VsourceSetVoltage(subunit, 1)
 
     # Allow continuous input
-
     while True:
          
         # Collect data from channels 1 to 16
@@ -77,27 +76,21 @@ if __name__ == "__main__":
             thermocouples[subunit][1].append(curr_vol)
 
             # Insert data into the table
-            cursor.execute("""
-                INSERT INTO THERMOCOUPLES (subunit, voltage, timestamps) 
-                VALUES (?, ?, ?)
-            """, (subunit, curr_vol, timestamp))
+            with sqlite3.connect(db_path) as connection:
+                cursor = connection.cursor()
+                cursor.execute("""
+                    INSERT INTO THERMOCOUPLES (subunit, voltage, timestamps) 
+                    VALUES (?, ?, ?)
+                """, (subunit, curr_vol, timestamp))
+                connection.commit()
 
-        # Commit the changes
-        connection.commit()
         print("Data updated in THERMOCOUPLES table successfully.")
 
-        # Print rtds data in a pretty format
-        print("RTDs Data:")
+        # Print thermocouples data in a pretty format
+        print("Thermocouples Data:")
         for subunit in subunits:
             print(f"\nSubunit {subunit}:")
             pprint.pprint(list(zip(thermocouples[subunit][0], thermocouples[subunit][1])), indent=2, width=80)
-
-
-
-        # Define the local URL and payload and send data to host
-        url = 'http://localhost:5000/test'
-        myobj = thermocouples
-        response = requests.post(url, json = myobj)
 
         # Specify desired subunit to modify or quit to terminate program
         subunit = input("Channel Number (1-16): ")
@@ -123,26 +116,16 @@ if __name__ == "__main__":
             voltage = card.VsourceGetVoltage(subunit)
             print("Voltage", subunit, "set to", voltage, "mV.")
             
-
         except ValueError as ve:
             print(f"Invalid input: {ve}")
 
         except Exception as e:
             print(f"An error occurred: {e}")
 
-
-    # Final Data send after program terminates
-    url = 'http://localhost:5000/test'
-    myobj = thermocouples
-    response = requests.post(url, json = myobj)
-
     # Print the number of rows inserted
-    print("Number of rows inserted:", connection.total_changes)
-
-    # Optional: Verify the data was inserted correctly
-    with sqlite3.connect("rtd.db") as connection:
+    with sqlite3.connect(db_path) as connection:
         with closing(connection.cursor()) as cursor:
-            rows = cursor.execute("SELECT * FROM RTDs").fetchall()
-            print("Data in RTDs table:")
+            rows = cursor.execute("SELECT * FROM THERMOCOUPLES").fetchall()
+            print("Data in THERMOCOUPLES table:")
             for row in rows:
                 print(row)

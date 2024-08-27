@@ -1,6 +1,6 @@
 import pilxi
 
-IP_Address = "169.254.215.49"
+IP_Address = "192.168.80.25"
 
 # Port, timeout parameters are optional, defaults will be used otherwise.
 session = pilxi.Pi_Session(IP_Address)

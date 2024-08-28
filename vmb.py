@@ -5,9 +5,10 @@ from contextlib import closing
 import os
 
 def main():
+    # ina pi address
     IP_Address = "192.168.80.104"
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((IP_Address, 12345))
+    client_socket.connect((IP_Address, 12346))
     
     addresses_all = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     addresses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

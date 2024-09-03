@@ -1,6 +1,1 @@
-# HITL
-eload.py - 
-rtd.py -
-thermocouple.py -
-vmbox.py - 
-card_find.py -
+run "python dashboard.py" to open up GUI and Data Display

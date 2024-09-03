@@ -5,6 +5,7 @@ import pprint
 from contextlib import closing
 
 if __name__ == "__main__":
+    print("Thermocouples script executed successfully.")
 
     # Connect to a chassis using an IP address.
     # The ClientBridge driver can also connect to local PXI chassis by passing
@@ -121,11 +122,3 @@ if __name__ == "__main__":
 
         except Exception as e:
             print(f"An error occurred: {e}")
-
-    # Print the number of rows inserted
-    with sqlite3.connect(db_path) as connection:
-        with closing(connection.cursor()) as cursor:
-            rows = cursor.execute("SELECT * FROM THERMOCOUPLES").fetchall()
-            print("Data in THERMOCOUPLES table:")
-            for row in rows:
-                print(row)
